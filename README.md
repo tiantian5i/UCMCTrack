@@ -38,8 +38,10 @@ Before you begin, ensure you have the following prerequisites installed on your 
 
 ```bash
 python demo.py --cam_para demo/cam_para.txt --video demo/demo.mp4
+python demo2.py --cam_para demo/cam_para.txt --video demo/demo.mp4
 ```
 The file `demo/cam_para.txt` is the camera parameters estimated from a single image. The code of this tool is released.  For specific steps, please refer to the Get Started.
+The demo uses yolov8 as the detector, and demo2 uses yolox from bytetrack as the detector.
 
 ## 🗼 Pipeline of UCMCTrack
 First, the detection boxes are mapped onto the ground plane using homography transformation. Subsequently, the Correlated Measurement Distribution (CMD) of the target is computed. This distribution is then fed into a Kalman filter equipped with the Constant Velocity (CV) motion model and Process Noise Compensation (PNC). Next, the mapped measurement and the predicted track state are utilized as inputs to compute the Mapped Mahalanobis Distance (MMD). Finally, the Hungarian algorithm is applied to associate the mapped measurements with tracklets, thereby obtaining complete tracklets.
